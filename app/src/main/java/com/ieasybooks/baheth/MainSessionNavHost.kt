@@ -13,14 +13,18 @@ class MainSessionNavHost : TurboSessionNavHostFragment() {
 
     override val registeredFragments: List<KClass<out Fragment>>
         get() = listOf(
-            WebFragment::class
+            WebFragment::class,
+            WebBottomSheetFragment::class
         )
 
     override val registeredActivities: List<KClass<out AppCompatActivity>>
         get() = listOf()
 
     override val pathConfigurationLocation: TurboPathConfiguration.Location
-        get() = TurboPathConfiguration.Location(assetFilePath = "json/configuration.json")
+        get() = TurboPathConfiguration.Location(
+            assetFilePath = "json/configuration.json",
+            remoteFileUrl = "${startLocation}/configurations/android-v1.json"
+        )
 
     override fun onSessionCreated() {
         super.onSessionCreated()

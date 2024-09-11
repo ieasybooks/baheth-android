@@ -30,7 +30,8 @@ open class WebFragment : TurboWebFragment(), TurboNavDestination {
 
     private fun isNavigable(location: String): Boolean {
         return location.startsWith("https://baheth.ieasybooks.com") &&
-                !location.contains("active_storage")
+                !location.contains("active_storage") &&
+                !location.contains("download")
     }
 
     private fun launchCustomTab(location: String) {

@@ -3,7 +3,6 @@ package com.ieasybooks.baheth
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import dev.hotwire.turbo.activities.TurboActivity
 import dev.hotwire.turbo.delegates.TurboActivityDelegate

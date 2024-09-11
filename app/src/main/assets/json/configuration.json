@@ -10,6 +10,16 @@
       "properties": {
         "context": "default",
         "uri": "turbo://fragment/web",
+        "pull_to_refresh_enabled": true
+      }
+    },
+    {
+      "patterns": [
+        "/contacts/new$"
+      ],
+      "properties": {
+        "context": "modal",
+        "uri": "turbo://fragment/web/bottom/sheet",
         "pull_to_refresh_enabled": false
       }
     }
