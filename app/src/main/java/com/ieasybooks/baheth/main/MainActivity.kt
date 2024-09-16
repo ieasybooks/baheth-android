@@ -1,9 +1,8 @@
-package com.ieasybooks.baheth
+package com.ieasybooks.baheth.main
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.ieasybooks.baheth.R
 import dev.hotwire.turbo.activities.TurboActivity
 import dev.hotwire.turbo.delegates.TurboActivityDelegate
 
@@ -17,13 +16,5 @@ class MainActivity : AppCompatActivity(), TurboActivity {
         delegate = TurboActivityDelegate(this, R.id.main_nav_host)
 
         supportActionBar?.hide()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return true
     }
 }

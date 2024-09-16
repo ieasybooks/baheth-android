@@ -1,15 +1,20 @@
-package com.ieasybooks.baheth
+package com.ieasybooks.baheth.main
 
-import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.ieasybooks.baheth.features.web.WebBottomSheetFragment
+import com.ieasybooks.baheth.features.web.WebFragment
+import com.ieasybooks.baheth.util.HOME_URL
+import com.ieasybooks.baheth.util.customUserAgent
+import com.ieasybooks.baheth.util.initDayNightTheme
 import dev.hotwire.turbo.config.TurboPathConfiguration
 import dev.hotwire.turbo.session.TurboSessionNavHostFragment
 import kotlin.reflect.KClass
 
-class MainSessionNavHost : TurboSessionNavHostFragment() {
+class MainSessionNavHostFragment : TurboSessionNavHostFragment() {
     override var sessionName = "main"
-    override var startLocation = "https://baheth.ieasybooks.com"
+
+    override var startLocation = HOME_URL
 
     override val registeredFragments: List<KClass<out Fragment>>
         get() = listOf(
@@ -28,10 +33,8 @@ class MainSessionNavHost : TurboSessionNavHostFragment() {
 
     override fun onSessionCreated() {
         super.onSessionCreated()
-        session.webView.settings.userAgentString = customUserAgent(session.webView)
-    }
 
-    private fun customUserAgent(webView: WebView): String {
-        return "Turbo Native Android ${webView.settings.userAgentString}"
+        session.webView.settings.userAgentString = session.webView.customUserAgent
+        session.webView.initDayNightTheme()
     }
 }
